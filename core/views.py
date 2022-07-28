@@ -110,7 +110,8 @@ class PostView(LoginRequiredMixin, ListView):
     template_name = 'post.html'
     context_object_name = 'posts'
     login_url: 'signin'
-    paginate_by = 4
+    paginate_by = 5
+
 
     def get_queryset(self):
         user_following_list = []
