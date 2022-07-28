@@ -365,40 +365,4 @@ def logout(request):
     return redirect('social_book:signin')
 
 
-# User = get_user_model()
 
-# def register_page_(request):
-#     form = RegisterForm(request.POST())
-#     context = {"forms":form}
-#     if form.is_valid(self):
-#         print(form.cleaned_date)
-#         username = form.cleaned_data.get("username")
-#         email = form.cleaned_data.get("email")
-#         password = form.cleaned_get("password")
-#         new_user = User.objects.create_user(username,email,password)
-
-#     render(request,"signup.html",context)
-
-class DetailPost(LoginRequiredMixin, DetailView):
-    """投稿詳細ページ"""
-    model = Post
-    template_name = 'detail.html'
-
-
-def delete(request):
-    user_profile = Profile.objects.get(user=request.user)
-    if request.method == 'POST':
-        if 'delete1' in request.POST:
-            # ボタン1がクリックされた場合の処理
-            if profile.profileimg is not None:
-                image = user_profile.profileimg
-
-            user_profile.profileimg = image
-            user_profile.save()
-        return redirect('social_book:settings')
-
-
-
-        # elif 'delete2' in request.POST:
-        #     # ボタン2がクリックされた場合の処理
-        #     print("aaaaaa")
